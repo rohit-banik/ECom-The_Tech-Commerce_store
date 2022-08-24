@@ -76,7 +76,7 @@ const ProductScreen = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="md:rounded-md shadow-md"
+                className="md:rounded-md shadow-sm max-h-72 md:w-auto w-min ml-auto mr-auto md:pt-0 pt-2 md:max-h-[620px]"
               />
             </div>
             <div className="flex flex-col md:mx-0 mx-4 lg:mx-4">

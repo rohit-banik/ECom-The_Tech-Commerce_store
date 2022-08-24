@@ -12,13 +12,17 @@ const Product = ({ product }) => {
             whileHover={{ scale: 1.07 }}
             src={product.image}
             alt="product"
-            className="rounded-sm w-full"
+            className="rounded-sm ml-auto mr-auto max-h-40 md:max-h-44 lg:max-h-56"
           />
         </Link>
         <div>
           <Link to={`/product/${product._id}`}>
             <div className="md:text-base text-sm pt-3 px-2 font-medium">
-              {product.name}
+              {product.name.length > 30 ? (
+                <span>{product.name.slice(0, 30)}. . . .</span>
+              ) : (
+                product.name
+              )}
             </div>
           </Link>
         </div>

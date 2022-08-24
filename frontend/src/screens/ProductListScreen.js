@@ -122,9 +122,15 @@ const ProductListScreen = () => {
                     {product._id}
                   </td>
                   <td className="text-center lg:text-left">
-                    <div className="md:table hidden">{product.name}</div>
+                    <div className="md:table hidden">
+                      {product.name.length > 40 ? (
+                        <span>{product.name.slice(0, 40)}. . .</span>
+                      ) : (
+                        product.name
+                      )}
+                    </div>
                     <div className="lg:text-left md:hidden">
-                      {product.name.split(" ")[0]}
+                      {product.name.slice(0, 8)}
                     </div>
                   </td>
                   <td className="text-center lg:text-left">${product.price}</td>

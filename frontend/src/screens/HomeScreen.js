@@ -26,21 +26,21 @@ const HomeScreen = () => {
       {keyword && (
         <Link
           to={"/"}
-          className="absolute md:pl-20 -left-4 flex top-20+ cursor-pointer flex-row items-center w-fit py-2 px-5 rounded-full hover:bg-primary-500 hover:text-light transition-all duration-100 ease-in-out"
+          className="absolute md:pl-20 -left-4 flex top-20 cursor-pointer flex-row items-center w-fit py-2 px-5 rounded-full hover:bg-primary-500 hover:text-light transition-all duration-100 ease-in-out"
         >
           <MdArrowBackIosNew className="mr-2" />
           <span className="hidden md:block">Go Back</span>
         </Link>
       )}
       <h1 className="font-semibold text-2xl pb-5 md:border-none border-b md:text-4xl text-center">
-        Top Products
+        Browse our Products
       </h1>
       {loading ? (
         <Loader />
       ) : error ? (
         <MessageFull type="danger">{error}</MessageFull>
       ) : (
-        <div className="grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 ml-auto mr-auto md:gap-1 w-full xl:w-8/12 lg:w-full md:w-full">
+        <div className="grid grid-cols-2 lg:grid-cols-6 md:grid-cols-3 ml-auto mr-auto md:gap-1 w-full xl:w-full lg:w-full md:w-full">
           {products.map((product) => (
             <Product key={product._id} product={product} />
           ))}

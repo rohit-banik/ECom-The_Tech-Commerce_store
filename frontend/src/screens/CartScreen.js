@@ -69,7 +69,7 @@ const CartScreen = () => {
                   <div className="max-w-[100px] min-w-[100px] md:min-w-[150px] md:max-w-[150px] lg:max-w-[180px]">
                     <img
                       src={item.image}
-                      className="md:rounded-l-lg rounded-sm"
+                      className="md:rounded-l-lg rounded-sm max-h-56 p-2"
                       alt={item.name}
                     />
                   </div>

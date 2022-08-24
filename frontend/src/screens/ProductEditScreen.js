@@ -178,13 +178,15 @@ const ProductEditScreen = () => {
                 </div>
                 <div className="mt-2 md:mt-4">
                   <div className="md:text-lg text-sm">Category</div>
-                  <input
+                  <select
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
-                    type="text"
                     placeholder="Enter category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                  />
+                  >
+                    <option value="Electronics">Electronics</option>
+                    <option value="Gaming">Gaming</option>
+                  </select>
                 </div>
                 <div className="mt-2 md:mt-4">
                   <div className="md:text-lg text-sm">Description</div>

@@ -11,7 +11,7 @@ const getProducts = asyncHandler(async (req, res) => {
         },
       }
     : {};
-  const products = await Product.find({ ...keyword });
+  const products = await Product.find({ ...keyword }).sort({ updatedAt: -1 });
   res.json(products);
 });
 
@@ -43,15 +43,15 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // Create a product (Admin)
 const createProduct = asyncHandler(async (req, res) => {
   const product = new Product({
-    name: "Sample",
+    name: "Product Name",
     price: "0",
     user: req.user._id,
-    image: "/image/sample.jpg",
-    brand: "Sample brand",
-    category: "Sample category",
+    image: "Enter URL or choose file below",
+    brand: "Enter Brand Name",
+    category: "Electronics",
     countInStock: 0,
     numReviews: 0,
-    description: "Sample Desc",
+    description: "Enter Description",
   });
 
   const createdProduct = await product.save();
