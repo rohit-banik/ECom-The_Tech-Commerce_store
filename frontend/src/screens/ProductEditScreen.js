@@ -117,7 +117,7 @@ const ProductEditScreen = () => {
             ) : (
               <form onSubmit={submitHandler}>
                 <div className="mt-2 md:mt-4">
-                  <div className="md:text-lg text-sm">Name</div>
+                  <div className="md:text-lg text-sm">Name*</div>
                   <input
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
                     type="name"
@@ -127,7 +127,7 @@ const ProductEditScreen = () => {
                   />
                 </div>
                 <div className="mt-2 md:mt-4">
-                  <div className="md:text-lg text-sm">Price</div>
+                  <div className="md:text-lg text-sm">Price*</div>
                   <input
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
                     type="number"
@@ -137,7 +137,7 @@ const ProductEditScreen = () => {
                   />
                 </div>
                 <div className="mt-2 md:mt-4">
-                  <div className="md:text-lg text-sm">Image</div>
+                  <div className="md:text-lg text-sm">Image*</div>
                   <input
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
                     type="text"
@@ -147,17 +147,20 @@ const ProductEditScreen = () => {
                   />
                 </div>
                 <div className="mt-2 md:mt-4">
-                  <div className="md:text-lg text-sm">Upload Image</div>
+                  <div className="md:text-lg text-sm">
+                    Upload Image (disabled)
+                  </div>
                   <input
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
                     type="file"
                     id="image-file"
+                    disabled
                     onChange={uploadFileHandler}
                   />
                 </div>
                 {uploading && <Loader />}
                 <div className="mt-2 md:mt-4">
-                  <div className="md:text-lg text-sm">Brand</div>
+                  <div className="md:text-lg text-sm">Brand*</div>
                   <input
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
                     type="text"
@@ -177,7 +180,7 @@ const ProductEditScreen = () => {
                   />
                 </div>
                 <div className="mt-2 md:mt-4">
-                  <div className="md:text-lg text-sm">Category</div>
+                  <div className="md:text-lg text-sm">Category*</div>
                   <select
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
                     placeholder="Enter category"
@@ -189,7 +192,7 @@ const ProductEditScreen = () => {
                   </select>
                 </div>
                 <div className="mt-2 md:mt-4">
-                  <div className="md:text-lg text-sm">Description</div>
+                  <div className="md:text-lg text-sm">Description*</div>
                   <input
                     className="py-2 md:py-4 px-3 md:px-6 bg-secondary-100 w-full mt-2 focus:border-secondary-500 placeholder:text-secondary-300 outline-none border border-secondary-200 transition-all duration-300 ease-in-out"
                     type="text"

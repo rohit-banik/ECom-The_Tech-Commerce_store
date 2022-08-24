@@ -80,7 +80,7 @@ const ProductScreen = () => {
               />
             </div>
             <div className="flex flex-col md:mx-0 mx-4 lg:mx-4">
-              <h3 className="font-base uppercase text-lg md:text-xl lg:text-4xl mt-2 lg:mt-10 text-primary-900">
+              <h3 className="font-base uppercase w-fit text-lg md:text-xl lg:text-4xl mt-2 lg:mt-10 text-primary-900">
                 {product.name}
               </h3>
               <div className="text-xl md:mt-2 lg:mt-6 md:border-t pr-2 md:p-1 lg:p-4">
