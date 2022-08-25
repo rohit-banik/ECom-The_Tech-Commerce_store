@@ -69,13 +69,19 @@ const CartScreen = () => {
                   <div className="max-w-[100px] min-w-[100px] md:min-w-[150px] md:max-w-[150px] lg:max-w-[180px]">
                     <img
                       src={item.image}
-                      className="md:rounded-l-lg rounded-sm max-h-56 p-2"
+                      className="md:rounded-l-lg rounded-sm max-h-40 p-2"
                       alt={item.name}
                     />
                   </div>
                   <div className="px-2 md:p-4 flex flex-col md:flex-row w-full">
-                    <div className="font-base text-sm lg:text-xl w-full lg:w-2/4">
-                      <Link to={`/product/${item.product}`}>{item.name}</Link>
+                    <div className="text-sm lg:text-lg w-full lg:w-2/4">
+                      <Link to={`/product/${item.product}`}>
+                        {item.name.length > 45 ? (
+                          <span>{item.name.slice(0, 44)}...</span>
+                        ) : (
+                          item.name
+                        )}
+                      </Link>
                     </div>
                     <div className="md:text-md lg:text-2xl text-md lg:w-1/4 text-right md:text-left mx-4 lg:ml-8">
                       $<span className="font-bold">{item.price}</span>
@@ -148,7 +154,7 @@ const CartScreen = () => {
           )}
         </div>
 
-        <div className="flex flex-col md:mt-0 mt-4 md:px-0 px-2 md:ml-2 lg:ml-6 w-full md:w-5/12 h-fit">
+        <div className="flex flex-col md:my-0 my-4 md:px-0 px-2 md:ml-2 lg:ml-6 w-full md:w-5/12 h-fit">
           {cartItems.length === 0 ? (
             ""
           ) : (

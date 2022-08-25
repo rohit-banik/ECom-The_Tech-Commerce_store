@@ -108,11 +108,15 @@ const PlaceOrderScreen = () => {
                             to={`/product/${item.product}`}
                             className="text-xs md:text-base"
                           >
-                            {item.name}
+                            {item.name.length > 41 ? (
+                              <span>{item.name.slice(0, 38)}...</span>
+                            ) : (
+                              item.name
+                            )}
                           </Link>
                         </td>
                         <td className=" text-xs md:text-base">
-                          {item.qty} x ${item.price} ={" "}
+                          {item.qty}x{item.price} ={" "}
                           <span className=" font-semibold">
                             ${item.qty * item.price}
                           </span>

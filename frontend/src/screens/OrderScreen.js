@@ -212,23 +212,27 @@ const OrderScreen = () => {
                   <tbody>
                     {order.orderItems.map((item, index) => (
                       <tr key={index} className="border-b">
-                        <td className="w-1/5 md:w-2/12 py-2">
+                        <td className="w-1/6 md:w-1/12 py-2">
                           <img
                             src={item.image}
-                            className="w-10 md:w-14 rounded-md"
+                            className="w-8 md:w-10 rounded-md"
                             alt={item.name}
                           />
                         </td>
-                        <td className="w-2/5 md:w-7/12">
+                        <td className="w-3/6 md:w-7/12">
                           <Link
                             to={`/product/${item.product}`}
                             className="text-xs md:text-base"
                           >
-                            {item.name}
+                            {item.name.length > 40 ? (
+                              <span>{item.name.slice(0, 36)}...</span>
+                            ) : (
+                              item.name
+                            )}
                           </Link>
                         </td>
-                        <td className=" text-xs md:text-base">
-                          {item.qty} x ${item.price} ={" "}
+                        <td className="pl-1 text-xs md:text-base">
+                          {item.qty}x{item.price} ={" "}
                           <span className="font-semibold">
                             ${item.qty * item.price}
                           </span>
@@ -269,7 +273,7 @@ const OrderScreen = () => {
                 <td className="px-4 h-8 md:h-14">Total</td>
                 <td className="font-semibold">${order.totalPrice}</td>
               </tr>
-              {!order.isPaid && (
+              {!order.isPaid && order.user._id === userInfo._id && (
                 <tr className="border-b md:text-xl text-base">
                   <td colSpan={2} className="px-4 pt-4">
                     {loadingPay && <Loader />}

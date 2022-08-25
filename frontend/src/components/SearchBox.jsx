@@ -51,20 +51,20 @@ const SearchBox = () => {
             name="q"
             onChange={(e) => setKeyword(e.target.value)}
             placeholder="Search Products"
-            className="absolute md:top-0 left-0 top-16 md:relative px-2 py-1.5 w-[95%] md:mx-0 mx-2 md:w-[500px] text-base rounded-md md:rounded-r-none md:rounded-l-md text-secondary-800 outline-none border focus:border-primary-400"
+            className="absolute md:top-0 left-0 top-16 md:relative px-2 py-1.5 w-11/12 md:mx-0 ml-2 md:w-[500px] text-base rounded-md md:rounded-r-none md:rounded-l-md text-secondary-800 outline-none border border-r-0 focus:border-primary-400"
           />
           <button
             type="submit"
-            className="top-[53px] md:top-0 relative left-32 md:left-0 md:flex flex-row border border-primary-400 hover:border-primary-500 bg-primary-400 hover:bg-primary-500 px-2 py-2 md:py-1.5 text-secondary-800 items-center gap-1 uppercase"
+            className="top-[53px] text-xl md:top-0 relative left-28 md:left-0 bg-white md:flex flex-row border border-r-0 hover:bg-primary-500 px-2 py-2 md:py-1.5 text-secondary-800 items-center gap-1 uppercase"
             onClick={submitHandler}
           >
             <BiSearchAlt />
-            <span className="md:block hidden">Search</span>
+            {/* <span className="md:block hidden">Search</span> */}
           </button>
           <motion.button
             whileTap={{ scale: 0.9 }}
             type="submit"
-            className="top-[53px] md:top-0 relative left-32 md:left-0 bg-green-300 hover:bg-teal-300 text-secondary-800 px-2 md:px-4 text-lg md:text-2xl items-center rounded-r-md uppercase"
+            className="top-[53px] md:top-0 relative left-28 md:left-0 bg-white text-secondary-800 px-2 md:px-1 hover:bg-teal-300 text-lg md:text-2xl items-center rounded-r-md border uppercase"
             onClick={toggleSearchBox}
           >
             <VscClose />

@@ -71,7 +71,7 @@ const ProductScreen = () => {
       ) : (
         <div>
           <Meta title={product.name} />
-          <div className="flex flex-col md:flex-row mt-6 md:mt-10 md:bg-light bg-secondary-100">
+          <div className="flex flex-col md:flex-row mt-6 md:mt-10 md:bg-light bg-light border-t md:border-t-0">
             <div className="flex flex-col w-full md:p-4 md:mx-2 lg:mx-4 md:border-r">
               <img
                 src={product.image}
@@ -80,7 +80,7 @@ const ProductScreen = () => {
               />
             </div>
             <div className="flex flex-col md:mx-0 mx-4 lg:mx-4">
-              <h3 className="font-base uppercase w-fit text-lg md:text-xl lg:text-4xl mt-2 lg:mt-10 text-primary-900">
+              <h3 className="font-base uppercase w-fit text-sm text-justify md:text-xl lg:text-4xl mt-2 lg:mt-10 text-primary-900">
                 {product.name}
               </h3>
               <div className="text-xl md:mt-2 lg:mt-6 md:border-t pr-2 md:p-1 lg:p-4">
@@ -99,7 +99,7 @@ const ProductScreen = () => {
 
               <p className="text-sm lg:text-base font-semibold border-t pt-3 pb-2 text-justify md:p-1 lg:p-4 md:border-b md:border-secondary-100 border-secondary-900 text-primary-600">
                 Description:{" "}
-                <span className="text-sm lg:text-lg font-normal justify-start text-primary-900">
+                <span className="text-xs md:text-sm lg:text-lg font-normal justify-start text-primary-900">
                   {product.description}
                 </span>
               </p>
@@ -288,7 +288,7 @@ const ProductScreen = () => {
               {product.reviews.length === 0 && (
                 <MessageFull>No reviews</MessageFull>
               )}
-              <div className="flex flex-col md:pb-4 pb-16 mx-2 lg:mx-28">
+              <div className="flex flex-col md:pb-4 pb-16 mb-4 mx-2 lg:mx-28">
                 {product.reviews.map((review) => (
                   <div
                     className={`${
