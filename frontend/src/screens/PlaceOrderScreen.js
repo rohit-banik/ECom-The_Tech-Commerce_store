@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CheckoutSteps, Message } from "../components";
+import { CheckoutSteps, LoaderDot, Message } from "../components";
 import { createOrder } from "../actions/orderActions";
 import { clearCart } from "../actions/cartActions";
 
@@ -31,7 +31,7 @@ const PlaceOrderScreen = () => {
   ).toFixed(2);
 
   const orderCreate = useSelector((state) => state.orderCreate);
-  const { order, success, error } = orderCreate;
+  const { loading, order, success, error } = orderCreate;
 
   useEffect(() => {
     if (success) {
@@ -173,7 +173,7 @@ const PlaceOrderScreen = () => {
                     onClick={placeOrderHandler}
                     className=" bg-primary-500 py-2 md:py-5 md:px-10 w-full text-light text-sm rounded-sm uppercase hover:bg-primary-600"
                   >
-                    Place Order
+                    {loading ? <LoaderDot /> : "Place Order"}
                   </motion.button>
                 </td>
               </tr>

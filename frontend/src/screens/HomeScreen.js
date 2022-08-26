@@ -32,18 +32,20 @@ const HomeScreen = () => {
           <span className="hidden md:block">Go Back</span>
         </Link>
       )}
-      <h1 className="font-semibold text-2xl pb-5 md:border-none border-b md:text-4xl text-center">
-        Browse our Products
-      </h1>
       {loading ? (
         <Loader />
       ) : error ? (
         <MessageFull type="danger">{error}</MessageFull>
       ) : (
-        <div className="grid grid-cols-2 lg:grid-cols-6 md:grid-cols-3 ml-auto mr-auto md:gap-1 w-full xl:w-full lg:w-full md:w-full">
-          {products.map((product) => (
-            <Product key={product._id} product={product} />
-          ))}
+        <div>
+          <h1 className="font-semibold text-2xl pb-5 md:border-none border-b md:text-4xl text-center">
+            Browse our Products
+          </h1>
+          <div className="grid grid-cols-2 lg:grid-cols-6 md:grid-cols-3 ml-auto mr-auto md:gap-1 w-full xl:w-full lg:w-full md:w-full">
+            {products.map((product) => (
+              <Product key={product._id} product={product} />
+            ))}
+          </div>
         </div>
       )}
     </>

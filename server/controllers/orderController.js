@@ -79,7 +79,9 @@ const getMyOrders = asyncHandler(async (req, res) => {
 
 // get all orders from admin side
 const getOrders = asyncHandler(async (req, res) => {
-  const orders = await Order.find({}).populate("user", "id name");
+  const orders = await Order.find({})
+    .sort({ updatedAt: -1 })
+    .populate("user", "id name");
   res.json(orders);
 });
 

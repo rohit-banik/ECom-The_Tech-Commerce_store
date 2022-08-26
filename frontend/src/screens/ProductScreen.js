@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader, MessageFull, Meta, Rating } from "../components";
+import { Loader, LoaderDot, MessageFull, Meta, Rating } from "../components";
 import {
   createProductReview,
   listProductDetails,
@@ -25,8 +25,11 @@ const ProductScreen = () => {
   const { userInfo } = userLogin;
 
   const productReviewCreate = useSelector((state) => state.productReviewCreate);
-  const { success: successProductReview, error: errorProductReview } =
-    productReviewCreate;
+  const {
+    loading: loadingProductReview,
+    success: successProductReview,
+    error: errorProductReview,
+  } = productReviewCreate;
 
   useEffect(() => {
     if (successProductReview) {
@@ -208,7 +211,7 @@ const ProductScreen = () => {
                             className="bg-secondary-800 rounded-md text-light mt-2 py-2 md:py-3 w-full md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
                             type="submit"
                           >
-                            Submit
+                            {loadingProductReview ? <LoaderDot /> : "Submit"}
                           </button>
                         </div>
                         <div className="flex flex-col w-full">
@@ -267,7 +270,7 @@ const ProductScreen = () => {
                           className="bg-secondary-800 rounded-md text-light py-2 md:py-3 w-full md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
                           type="submit"
                         >
-                          Submit
+                          {loadingProductReview ? <LoaderDot /> : "Submit"}
                         </button>
                       </div>
                     </form>

@@ -102,7 +102,7 @@ export const productReviewCreateReducer = (state = {}, action) => {
     case PRODUCT_CREATE_REVIEW_REQUEST:
       return { loading: true };
     case PRODUCT_CREATE_REVIEW_SUCCESS:
-      return { loading: false, success: true };
+      return { loading: true, success: true };
     case PRODUCT_CREATE_REVIEW_FAIL:
       return { loading: false, error: action.payload };
     case PRODUCT_CREATE_REVIEW_RESET:

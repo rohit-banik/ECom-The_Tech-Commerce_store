@@ -1,18 +1,13 @@
 import React from "react";
+import "./loader.css";
 
 const Loader = () => {
   return (
     <div>
-      {/* <div class="container">
-        <div class="box">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div> */}
-      <div role="status">
+      <div>
+        <div class="triple-spinner"></div>
+      </div>
+      {/* <div role="status">
         <svg
           className="inline mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-300 fill-yellow-400"
           viewBox="0 0 100 101"
@@ -29,7 +24,7 @@ const Loader = () => {
           />
         </svg>
         <span className="sr-only">Loading...</span>
-      </div>
+      </div> */}
     </div>
   );
 };
