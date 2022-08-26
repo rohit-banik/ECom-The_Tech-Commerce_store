@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { FormContainer, Loader, MessageFull } from "../components";
+import { FormContainer, LoaderDot, MessageFull } from "../components";
 import { login } from "../actions/userActions";
 import { motion } from "framer-motion";
 import { RiEmotionSadLine } from "react-icons/ri";
@@ -45,7 +45,7 @@ const LoginScreen = () => {
               </span>
             </MessageFull>
           )}
-          {loading && <Loader />}
+
           <form onSubmit={submitHandler}>
             <div className="mt-2 md:mt-4">
               <div className="md:text-lg text-sm">Email Address</div>
@@ -73,7 +73,7 @@ const LoginScreen = () => {
                 className="bg-secondary-800 text-light py-2 md:py-3 w-full md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
                 type="submit"
               >
-                Sign In
+                {loading ? <LoaderDot /> : "Sign In"}
               </motion.button>
             </div>
           </form>

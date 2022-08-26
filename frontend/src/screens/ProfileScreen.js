@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader, MessageFull } from "../components";
+import { Loader, LoaderDot, MessageFull } from "../components";
 import { getUserDetails, updateUserProfile } from "../actions/userActions";
 import { listMyOrders } from "../actions/orderActions";
 import { motion } from "framer-motion";
@@ -25,7 +25,7 @@ const ProfileScreen = () => {
   const { userInfo } = userLogin;
 
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
-  const { success } = userUpdateProfile;
+  const { loading: loadingUpdateProfile, success } = userUpdateProfile;
 
   const orderListMy = useSelector((state) => state.orderListMy);
   const { loading: loadingOrders, error: errorOrders, orders } = orderListMy;
@@ -131,7 +131,7 @@ const ProfileScreen = () => {
                 className="bg-secondary-800 text-light py-2 md:py-3 w-full md:w-fit md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
                 type="submit"
               >
-                Update
+                {loadingUpdateProfile ? <LoaderDot /> : "Update"}
               </motion.button>
             </div>
           </form>

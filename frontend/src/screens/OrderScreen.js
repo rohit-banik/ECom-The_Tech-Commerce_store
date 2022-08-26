@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { Loader, Message, MessageFull } from "../components";
+import { Loader, LoaderDot, Message, MessageFull } from "../components";
 import { MdArrowBackIosNew } from "react-icons/md";
 import {
   deliverOrder,
@@ -288,7 +288,6 @@ const OrderScreen = () => {
                   </td>
                 </tr>
               )}
-              {loadingDeliver && <Loader />}
               {userInfo &&
                 userInfo.isAdmin &&
                 order.isPaid &&
@@ -301,7 +300,7 @@ const OrderScreen = () => {
                         onClick={deliverHandler}
                         className=" bg-primary-500 py-2 md:py-5 md:px-10 w-full text-light text-sm rounded-sm uppercase hover:bg-primary-600"
                       >
-                        Mark as Delivered
+                        {loadingDeliver ? <LoaderDot /> : "Mark as Delivered"}
                       </motion.button>
                     </td>
                   </tr>

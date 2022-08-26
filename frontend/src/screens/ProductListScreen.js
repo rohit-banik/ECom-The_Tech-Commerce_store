@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader, MessageFull } from "../components";
+import { Loader, LoaderDot, MessageFull } from "../components";
 import {
   listProducts,
   deleteProduct,
@@ -74,13 +74,12 @@ const ProductListScreen = () => {
             className="bg-secondary-700 md:text-base text-xs hover:bg-secondary-800 text-light py-2 px-4"
             onClick={createProductHandler}
           >
-            + Create Product
+            {loadingCreate ? <LoaderDot /> : "+ Create Product"}
           </button>
         </div>
       </div>
-      {loadingDelete && <Loader />}
+      {loadingDelete && <LoaderDot />}
       {errorDelete && <MessageFull type="danger">{errorDelete}</MessageFull>}
-      {loadingCreate && <Loader />}
       {errorCreate && <MessageFull type="danger">{errorCreate}</MessageFull>}
       {loading ? (
         <Loader />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { FormContainer, Loader, MessageFull } from "../components";
+import { FormContainer, LoaderDot, MessageFull } from "../components";
 import { register } from "../actions/userActions";
 import { motion } from "framer-motion";
 import { RiEmotionSadLine, RiErrorWarningFill } from "react-icons/ri";
@@ -52,7 +52,6 @@ const RegisterScreen = () => {
               </span>
             </MessageFull>
           )}
-          {loading && <Loader />}
           <form onSubmit={submitHandler}>
             <div className="mt-2 md:mt-4">
               <div className="md:text-lg text-sm">Name</div>
@@ -110,7 +109,7 @@ const RegisterScreen = () => {
                 className="bg-secondary-800 text-light py-2 md:py-3 w-full md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
                 type="submit"
               >
-                Sign Up
+                {loading ? <LoaderDot /> : "Sign Up"}
               </motion.button>
             </div>
           </form>

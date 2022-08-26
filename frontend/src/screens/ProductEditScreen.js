@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { FormContainer, Loader, MessageFull } from "../components";
+import { FormContainer, Loader, LoaderDot, MessageFull } from "../components";
 import { listProductDetails, updateProduct } from "../actions/productActions";
 import { motion } from "framer-motion";
 import { MdArrowBackIosNew } from "react-icons/md";
@@ -101,12 +101,12 @@ const ProductEditScreen = () => {
         Go Back
       </Link>
       <FormContainer>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center pb-6">
           <div className="md:p-0 px-4 w-full md:w-4/12">
             <h1 className="uppercase text-xl font-semibold md:text-3xl mt-5 mb-1">
               Edit Product
             </h1>
-            {loadingUpdate && <Loader />}
+
             {errorUpdate && (
               <MessageFull type="danger">{errorUpdate}</MessageFull>
             )}
@@ -208,7 +208,7 @@ const ProductEditScreen = () => {
                     className="bg-secondary-800 text-light py-2 md:py-3 w-full md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
                     type="submit"
                   >
-                    Update
+                    {loadingUpdate ? <LoaderDot /> : "Submit"}
                   </motion.button>
                 </div>
               </form>

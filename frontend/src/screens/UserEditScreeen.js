@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { FormContainer, Loader, MessageFull } from "../components";
+import { FormContainer, Loader, LoaderDot, MessageFull } from "../components";
 import { getUserDetails, updateUser } from "../actions/userActions";
 import { USER_UPDATE_RESET } from "../constants/userConstants";
 import { motion } from "framer-motion";
@@ -62,7 +62,6 @@ const UserEditScreen = () => {
             <h1 className="uppercase text-xl font-semibold md:text-3xl mt-5 mb-1">
               Edit User
             </h1>
-            {loadingUpdate && <Loader />}
             {errorUpdate && (
               <MessageFull type="danger">{errorUpdate}</MessageFull>
             )}
@@ -108,7 +107,7 @@ const UserEditScreen = () => {
                     className="bg-secondary-800 text-light py-2 md:py-3 w-full md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
                     type="submit"
                   >
-                    Update
+                    {loadingUpdate ? <LoaderDot /> : "Update"}
                   </motion.button>
                 </div>
               </form>

@@ -5,7 +5,7 @@ const Loader = () => {
   return (
     <div>
       <div>
-        <div class="triple-spinner"></div>
+        <div className="triple-spinner"></div>
       </div>
       {/* <div role="status">
         <svg

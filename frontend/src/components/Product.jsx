@@ -5,7 +5,7 @@ import Rating from "./Rating";
 
 const Product = ({ product }) => {
   return (
-    <div className="bg-light">
+    <div className="bg-white">
       <div className="pb-3 px-0 md:p-3 min-h-full border-solid border-b odd:border-r md:border overflow-hidden border-secondary-200 rounded-sm md:shadow-md">
         <Link to={`/product/${product._id}`}>
           <motion.img

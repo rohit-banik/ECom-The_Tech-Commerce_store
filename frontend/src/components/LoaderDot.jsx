@@ -4,7 +4,7 @@ import "./loaderdot.css";
 const LoaderDot = () => {
   return (
     <div>
-      <div class="loader1">
+      <div className="loader1">
         <span></span>
         <span></span>
         <span></span>

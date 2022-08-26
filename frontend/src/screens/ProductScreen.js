@@ -208,7 +208,7 @@ const ProductScreen = () => {
                             </option>
                           </select>
                           <button
-                            className="bg-secondary-800 rounded-md text-light mt-2 py-2 md:py-3 w-full md:px-8 uppercase text-sm md:text-lg border hover:bg-secondary-600"
+                            className="bg-secondary-800 rounded-md text-light mt-2 py-2 md:py-3 w-full uppercase text-sm md:text-lg border hover:bg-secondary-600"
                             type="submit"
                           >
                             {loadingProductReview ? <LoaderDot /> : "Submit"}
